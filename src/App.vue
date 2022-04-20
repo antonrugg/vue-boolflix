@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HeaderComponent />
+    <HeaderComponent @search="searching"/>
     <MainComponent />
   </div>
 </template>
@@ -20,14 +20,17 @@ export default {
     return{
       apiUrl: 'https://api.themoviedb.org/3/search/',
       apiKey: 'd83a04b61337a081b6c3c318b16a428d',
+      textToSearch: ''
     }
   },
-  mounted(){
+  
+  methods: {
 
-    const query = 'verde'
+     
 
-    const params = {
-      query,
+    searching(){
+      const params = {
+      textToSearch: this.textToSearch,
       api_key: this.apiKey,
       language: 'it-IT',
 
@@ -38,7 +41,10 @@ export default {
     }).catch((error) => {
       console.log(error);
     })
-  }
+    }
+    
+  },
+
 }
 </script>
 
