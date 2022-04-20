@@ -1,6 +1,7 @@
 <template>
-  <header>
-    prova
+  <header class="container">
+      <input type="text">
+      <button class="btn-danger">Search</button>
   </header>
 </template>
 
