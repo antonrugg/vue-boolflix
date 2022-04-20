@@ -1,6 +1,6 @@
 <template>
   <header class="container">
-      <input type="text" placeholder="Search" v-model="textToSearch">
+      <input type="text" placeholder="Search" v-model="queryStored">
       <button class="btn-danger" @click="search">Search</button>
   </header>
 </template>
@@ -10,13 +10,13 @@ export default {
   name: 'HeaderComponent',
   data(){
       return{
-          textToSearch: ''
+         queryStored: '', 
       }
   },
   methods: {
       search(){
-        console.log(this.textToSearch);
-        this.$emit('search', this.textToSearch);
+        console.log(this.queryStored);
+        this.$emit('search', this.queryStored);
       }
   }
   
