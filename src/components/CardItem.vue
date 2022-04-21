@@ -12,8 +12,8 @@
         <p>
           <span>
             Voto:  
-                <i v-for="(starBold, i) in starCount" :key="i" class="fas fa-star"></i>
-                <i v-for="(starThin, j) in (5 - starCount)" :key="j" class="fa-regular fa-star"></i>
+                <i v-for="(star, i) in starCount" :key="i" class="fas fa-star"></i>
+                <i v-for="(star, i) in (5 - starCount)" :key="'A'+ i" class="fa-regular fa-star"></i>
           </span>
         </p>
        
