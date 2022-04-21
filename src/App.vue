@@ -81,5 +81,9 @@ export default {
 <style lang="scss">
   @import '@/styles/general';
 
+    body{
+      background-color: gray;
+    }
+
   
 </style>
