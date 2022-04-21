@@ -4,8 +4,8 @@
            <h2>Movies</h2>
         </div>   
         
-        <div class="row">
-           <CardItem class="col-3 d-flex flex-wrap"
+        <div class="row d-flex justify-content-between flex-wrap">
+           <CardItem class="col-3 gy-3"
             v-for="film in films" :key="film.id"
             :item="film"
            />

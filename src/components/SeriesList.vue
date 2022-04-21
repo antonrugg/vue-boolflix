@@ -1,11 +1,11 @@
 <template>
     <section class="container d-flex flex-column">
       <div class="row">
-        <h2>Series</h2>
+        <h2>TV Series</h2>
       </div>      
   
-      <div class="row">        
-          <CardItem class="col-3 d-flex flex-wrap" 
+      <div class="row d-flex justify-content-between flex-wrap">        
+          <CardItem class="col-3 gy-3" 
             v-for="serie in series" :key="serie.id"
            :item="serie"
           />
