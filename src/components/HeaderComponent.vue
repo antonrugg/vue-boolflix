@@ -21,6 +21,7 @@ export default {
       search(){
         console.log(this.queryStored);
         this.$emit('search', this.queryStored);
+        
       }
   }
   
@@ -32,7 +33,7 @@ export default {
     header{
       background-color: black;
       width: 100vw;
-      padding: 2rem 2rem;
+      padding: 1rem 2rem;
       
 
       h1{

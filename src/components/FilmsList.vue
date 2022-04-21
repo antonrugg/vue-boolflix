@@ -1,7 +1,7 @@
 <template>
     <section class="container d-flex flex-column mt-5">
         <div class="row">
-           <h2>Movies</h2>
+           <h2 class="mt-5">Movies</h2>
         </div>   
         
         <div class="row d-flex justify-content-between flex-wrap">

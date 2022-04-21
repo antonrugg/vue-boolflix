@@ -6,8 +6,10 @@
       <div class="text-info-container pt-5" v-show="isHover">
         <p><span>Titolo: </span>{{item.title || item.name}}</p>
         <p><span>Titolo Originale: </span>{{item.original_title || item.original_name}}</p>
-        <p><span>Linguaggio: </span>{{item.original_language || item.original_language}}</p>
-        <p><span>Voto: </span>{{item.vote_average || item.vote_average}}</p>
+        <p><span>Linguaggio: </span> <country-flag :country='`${item.original_language}`' size='small'/> </p>
+        
+        
+        <p><span>Voto: </span>{{item.vote_average}}</p>
         <i class="fas fa-star"></i>
       </div>
 
@@ -15,11 +17,20 @@
 </template>
 
 <script>
+import CountryFlag from 'vue-country-flag'
+
+
 export default {
+    
+
+
     name: 'CardItem',
     props: {
         item: Object,
         
+    },
+    components: {
+        CountryFlag,
     },
     data(){
         return{
@@ -39,14 +50,11 @@ export default {
         min-height: 200px;
         cursor: pointer;
         border: 1px solid white;
-            &:hover{
-              transform: transition; 
-              transition: 0.3s;
-              transition-timing-function: linear;
-                }
+           
 
         .text-info-container{
             height: 100%;
+             
 
             i{
                 color: yellow;
@@ -65,6 +73,8 @@ export default {
             span{
                 color: white;
                 font-weight: 900;
+                padding-bottom: 0.3rem;
+                margin-right: 0.3rem;
             }
         }
 

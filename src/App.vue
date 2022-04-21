@@ -11,6 +11,7 @@ import HeaderComponent from './components/HeaderComponent.vue'
 import MainComponent from './components/MainComponent.vue'
 import axios from "axios"
 
+
 export default {
   name: 'App',
   components: {
