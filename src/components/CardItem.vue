@@ -9,7 +9,7 @@
         <p><span>Linguaggio: </span> <country-flag :country='`${item.original_language}`' size='small'/> </p>
         
         
-        <p><span>Voto: </span>{{item.vote_average}}</p>
+        <p><span>Voto: </span>{{Math.round(item.vote_average / 2)}}</p>
         <i class="fas fa-star"></i>
       </div>
 
