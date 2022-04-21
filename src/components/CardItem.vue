@@ -6,7 +6,14 @@
       <div class="text-info-container pt-5" v-show="isHover">
         <p><span>Titolo: </span>{{item.title || item.name}}</p>
         <p><span>Titolo Originale: </span>{{item.original_title || item.original_name}}</p>
-        <p><span>Linguaggio: </span> <country-flag :country='`${item.original_language}`' size='small'/> </p>
+        <p>
+            <span>Linguaggio: </span> 
+            <country-flag  
+            v-if="item.original_language !== 'en'"
+            :country='`${item.original_language}`'
+             size='small'/>
+             <country-flag v-else country="gb" size="small"/>
+        </p>
         
         
         <p>
