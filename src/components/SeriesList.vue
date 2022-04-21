@@ -2,28 +2,25 @@
     <section class="container d-flex flex-column">
       <div class="row">
         <h2>Series</h2>
-      </div>
-      <div class="row">
-        <div class="col-2 d-flex flex-wrap">  
-          <CardSerie v-for="serie in series" :key="serie.id"
-            :name="serie.name"
-            :original_name="serie.original_name"
-            :original_language="serie.original_language"
-            :vote_average="serie.vote_average"
+      </div>      
+  
+      <div class="row">        
+          <CardItem class="col-3 d-flex flex-wrap" 
+            v-for="serie in series" :key="serie.id"
+           :item="serie"
           />
-        </div>
       </div>  
     </section>    
 </template>
 
 <script>
 
-import CardSerie from '@/components/CardSerie.vue'
+import CardItem from '@/components/CardItem.vue'
 
 export default {
     name: 'SeriesList',
     components: {
-      CardSerie,
+      CardItem,
   },
     props:{
         series: Array,

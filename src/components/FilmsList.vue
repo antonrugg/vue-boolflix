@@ -3,27 +3,25 @@
         <div class="row">
            <h2>Movies</h2>
         </div>   
+        
         <div class="row">
-        <div class="col-3 d-flex flex-wrap">
-           <CardFilm v-for="film in films" :key="film.id"
-            :title="film.title"
-            :original_title="film.original_title"
-            :original_language="film.original_language"
-            :vote_average="film.vote_average"
+           <CardItem class="col-3 d-flex flex-wrap"
+            v-for="film in films" :key="film.id"
+            :item="film"
            />
         </div>   
         
-         </div>
+         
     </section>     
 </template>
 
 <script>
-import CardFilm from '@/components/CardFilm.vue'
+import CardItem from '@/components/CardItem.vue'
 
 export default {
     name: 'FilmsList',
     components: {
-      CardFilm,
+      CardItem,
   },
     props: {
       films: Array,
