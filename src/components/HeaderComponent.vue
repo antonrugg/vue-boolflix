@@ -1,5 +1,5 @@
 <template>
-  <header class="container-fluid d-flex justify-content-between">
+  <header class="container-fluid d-flex justify-content-between fixed-top">
       <h1>boolflix</h1>
 
       <div>
@@ -33,6 +33,7 @@ export default {
       background-color: black;
       width: 100vw;
       padding: 2rem 2rem;
+      
 
       h1{
         text-transform: uppercase;

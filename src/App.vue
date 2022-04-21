@@ -83,6 +83,7 @@ export default {
 
     body{
       background-color: gray;
+      overflow-x: hidden;
     }
 
   

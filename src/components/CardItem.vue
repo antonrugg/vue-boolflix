@@ -8,8 +8,9 @@
         <p><span>Titolo Originale: </span>{{item.original_title || item.original_name}}</p>
         <p><span>Linguaggio: </span>{{item.original_language || item.original_language}}</p>
         <p><span>Voto: </span>{{item.vote_average || item.vote_average}}</p>
+        <i class="fas fa-star"></i>
       </div>
-      
+
   </div>
 </template>
 
@@ -29,12 +30,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    @import url('~@fortawesome/fontawesome-free/css/all.min.css');
 
 
 
     .ar-card{
         background-color: black;
         min-height: 200px;
+        cursor: pointer;
+        border: 1px solid white;
             &:hover{
               transform: transition; 
               transition: 0.3s;
@@ -43,6 +47,10 @@ export default {
 
         .text-info-container{
             height: 100%;
+
+            i{
+                color: yellow;
+            }
         }
 
         img{

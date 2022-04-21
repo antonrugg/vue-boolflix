@@ -1,5 +1,5 @@
 <template>
-    <section class="container d-flex flex-column">
+    <section class="container d-flex flex-column mt-5">
         <div class="row">
            <h2>Movies</h2>
         </div>   
