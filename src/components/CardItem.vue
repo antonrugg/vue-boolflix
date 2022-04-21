@@ -9,9 +9,14 @@
         <p><span>Linguaggio: </span> <country-flag :country='`${item.original_language}`' size='small'/> </p>
         
         
-        <p><span>Voto: </span>{{starCount}}</p>
-        <i v-for="(starBold, i) in starCount" :key="i" class="fas fa-star"></i>
-        <i v-for="(starThin, j) in (5 - starCount)" :key="j" class="fa-regular fa-star"></i>
+        <p>
+          <span>
+            Voto:  
+                <i v-for="(starBold, i) in starCount" :key="i" class="fas fa-star"></i>
+                <i v-for="(starThin, j) in (5 - starCount)" :key="j" class="fa-regular fa-star"></i>
+          </span>
+        </p>
+       
       </div>
 
   </div>
