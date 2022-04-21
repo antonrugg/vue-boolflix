@@ -9,8 +9,9 @@
         <p><span>Linguaggio: </span> <country-flag :country='`${item.original_language}`' size='small'/> </p>
         
         
-        <p><span>Voto: </span>{{Math.round(item.vote_average / 2)}}</p>
-        <i class="fas fa-star"></i>
+        <p><span>Voto: </span>{{starCount}}</p>
+        <i v-for="(starBold, i) in starCount" :key="i" class="fas fa-star"></i>
+        <i v-for="(starThin, j) in (5 - starCount)" :key="j" class="fa-regular fa-star"></i>
       </div>
 
   </div>
@@ -34,7 +35,9 @@ export default {
     },
     data(){
         return{
-            isHover: false
+            isHover: false,
+            starCount: Math.round(this.item.vote_average / 2)
+            
         }
     }
 }
