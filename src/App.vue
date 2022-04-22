@@ -10,6 +10,7 @@
 import HeaderComponent from './components/HeaderComponent.vue'
 import MainComponent from './components/MainComponent.vue'
 import axios from "axios"
+import {apiKey} from './apikey'
 
 
 export default {
@@ -21,7 +22,7 @@ export default {
   data(){
     return{
       apiUrl: 'https://api.themoviedb.org/3/search/',
-      apiKey: 'd83a04b61337a081b6c3c318b16a428d',
+      apiKey: apiKey,
       querySearched: '',
       input: false,
       films: [],
