@@ -11,6 +11,7 @@
           />
       </div>  
     </section>    
+    <!-- cycling every serie and passing single obj as prop to single generic card -->
 </template>
 
 <script>

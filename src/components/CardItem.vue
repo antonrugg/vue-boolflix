@@ -2,7 +2,7 @@
   <div class="card ar-card" @mouseover="isHover = true" @mouseleave="isHover = false">
 
       <img v-show="!isHover" :src="`https://image.tmdb.org/t/p/w342${item.poster_path}`" :alt="item.title || item.name">
-
+    <!-- text inside card showing on hover -->
       <div class="text-info-container pt-5" v-show="isHover">
         <p><span>Titolo: </span>{{item.title || item.name}}</p>
         <p><span>Titolo Originale: </span>{{item.original_title || item.original_name}}</p>
@@ -12,7 +12,8 @@
             v-if="item.original_language !== 'en'"
             :country='`${item.original_language}`'
              size='small'/>
-             <country-flag v-else country="gb" size="small"/>
+             <country-flag v-else country="us" size="small"/>
+            <!-- using flag icon library found on github: country flag component  -->
         </p>
         
         
@@ -23,6 +24,7 @@
                 <i v-for="(star, i) in (5 - starCount)" :key="'A'+ i" class="fa-regular fa-star"></i>
           </span>
         </p>
+        <!-- cycling stars empty and bold -->
        
       </div>
 

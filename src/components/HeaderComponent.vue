@@ -3,7 +3,7 @@
       <h1>boolflix</h1>
 
       <div>
-        <input type="text" placeholder="Search" v-model="queryStored">
+        <input type="text" placeholder="Search" v-model="queryStored" @keyup.enter="search">
         <button class="btn-danger" @click="search">Search</button>
       </div>
   </header>
@@ -18,6 +18,7 @@ export default {
       }
   },
   methods: {
+    //emit function, querystored = user input, passing it to app.vue 
       search(){
         console.log(this.queryStored);
         this.$emit('search', this.queryStored);

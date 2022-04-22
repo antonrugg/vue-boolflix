@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <HeaderComponent @search="searching"/>
+    <HeaderComponent @search="searching"/>  
     <MainComponent :films="films" :series="series" />
-
+    <!-- catching emit and passing props -->
   </div>
 </template>
 
@@ -31,18 +31,18 @@ export default {
   },
 
   methods: {
-
+    //function to handle user input and api response (emit, v-model in header component)
     searching(searchedInput){
       this.querySearched = searchedInput;
-
+      //enter only if input value is present(true)
       if(!this.input && this.querySearched.length > 0){
-
+        //response from api for movies
         this.queryApi('movie').then((response)=>{
           console.log(response);
           this.films = response.data.results;
           this.input = false;
         });
-
+        //response from api for tv
         this.queryApi('tv').then((response) =>{
           console.log(response);
           this.series = response.data.results;
@@ -61,7 +61,7 @@ export default {
     },
 
     queryApi(searchType){
-
+      //generic function for axios request, passing api required params obj in axios.get
       this.input = true;
 
       const params = {

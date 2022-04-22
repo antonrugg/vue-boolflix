@@ -3,6 +3,7 @@
 
       <FilmsList :films="films"/>
       <SeriesList :series="series"/>
+      <!-- passing arrays as props -->
       
        
   </main>

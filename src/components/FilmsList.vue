@@ -10,6 +10,7 @@
             :item="film"
            />
         </div>   
+        <!-- cycling every film and passing single obj as prop to single generic card -->
         
          
     </section>     
