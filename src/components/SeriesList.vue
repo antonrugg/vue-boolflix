@@ -8,6 +8,7 @@
           <CardItem class="col-3 gy-3" 
             v-for="serie in series" :key="serie.id"
            :item="serie"
+           
           />
       </div>  
     </section>    
@@ -25,6 +26,7 @@ export default {
   },
     props:{
         series: Array,
+        
     }
 }
 </script>

@@ -1,7 +1,8 @@
 <template>
   <div class="card ar-card" @mouseover="isHover = true" @mouseleave="isHover = false">
 
-      <img v-show="!isHover" :src="`https://image.tmdb.org/t/p/w342${item.poster_path}`" :alt="item.title || item.name">
+      <img v-if="item.poster_path" v-show="!isHover" :src="`https://image.tmdb.org/t/p/w342${item.poster_path}`" :alt="item.title || item.name">
+      <p class="not-found" v-else-if="!isHover && !item.poster_path">IMG NOT FOUND</p>
     <!-- text inside card showing on hover -->
       <div class="text-info-container pt-5" v-show="isHover">
         <p><span>Titolo: </span>{{item.title || item.name}}</p>
@@ -25,6 +26,9 @@
           </span>
         </p>
         <!-- cycling stars empty and bold -->
+        <ul>
+            <li v-for="actor in cast" :key="actor">{{actor.name}}</li>
+        </ul>
        
       </div>
 
@@ -33,6 +37,8 @@
 
 <script>
 import CountryFlag from 'vue-country-flag'
+// import axios from "axios"
+import {apiKey} from '@/apikey'
 
 
 export default {
@@ -50,9 +56,29 @@ export default {
     data(){
         return{
             isHover: false,
-            starCount: Math.round(this.item.vote_average / 2)
+            starCount: Math.round(this.item.vote_average / 2),
+            apiUrl: 'https://api.themoviedb.org/3/',
+            apiKey: apiKey,
+            credits: {},
+            cast: []
             
         }
+    },
+    methods: {
+        
+        // getCast(apiUrl, searchType, id){
+        //     this.cast = [];
+        //     axios.get(`${apiUrl}${searchType}/${id}/credits?${apiKey}`)
+        //          .then((response) =>{
+        //              this.credit = response.data;
+        //              console.log('credit', this.credit)
+        //              for (let i = 0; i < this.credit.cast.length; i++) {
+        //                  if (i < 5) {
+        //                         this.cast.push(this.credit.cast[i]);
+        //                     }
+        //   }
+        //          })
+        // }
     }
 }
 </script>
@@ -93,6 +119,12 @@ export default {
                 padding-bottom: 0.3rem;
                 margin-right: 0.3rem;
             }
+        }
+
+        .not-found{
+            position: absolute;
+            top: 50%; right: 50%;
+            transform: translate(50%,-50%);
         }
 
     }

@@ -22,7 +22,7 @@ export default {
       search(){
         console.log(this.queryStored);
         this.$emit('search', this.queryStored);
-        
+        this.queryStored = "";
       }
   }
   

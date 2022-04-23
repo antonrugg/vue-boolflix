@@ -8,6 +8,7 @@
            <CardItem class="col-3 gy-3"
             v-for="film in films" :key="film.id"
             :item="film"
+            
            />
         </div>   
         <!-- cycling every film and passing single obj as prop to single generic card -->
@@ -26,6 +27,7 @@ export default {
   },
     props: {
       films: Array,
+      
       
   },
   

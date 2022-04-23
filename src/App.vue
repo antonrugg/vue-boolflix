@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <HeaderComponent @search="searching"/>  
-    <MainComponent :films="films" :series="series" />
+    <MainComponent :films="films" :series="series" :apiUrl="apiUrl" :apiKey="apiKey" />
     <!-- catching emit and passing props -->
   </div>
 </template>
@@ -49,6 +49,7 @@ export default {
           this.series = response.data.results;
           this.input = false;
         });
+        
       }
 
     },
@@ -74,7 +75,9 @@ export default {
       console.log(error);
       this.input = false;
     })
-    }
+    },
+
+
   }
 
 }
