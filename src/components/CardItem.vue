@@ -16,6 +16,9 @@
              <country-flag v-else country="us" size="small"/>
             <!-- using flag icon library found on github: country flag component  -->
         </p>
+
+        <!-- <p>{{item.id}}</p>
+        <p>{{getCast}}</p> -->
         
         
         <p>
@@ -66,9 +69,9 @@ export default {
     },
     methods: {
         
-        // getCast(apiUrl, searchType, id){
+        // getCast(){
         //     this.cast = [];
-        //     axios.get(`${apiUrl}${searchType}/${id}/credits?${apiKey}`)
+        //     axios.get(`${this.apiUrl}${this.searchType}/${this.item.id}/credits?${apiKey}`)
         //          .then((response) =>{
         //              this.credit = response.data;
         //              console.log('credit', this.credit)
@@ -76,8 +79,12 @@ export default {
         //                  if (i < 5) {
         //                         this.cast.push(this.credit.cast[i]);
         //                     }
+
         //   }
+                
+
         //          })
+        //          return this.cast;
         // }
     }
 }

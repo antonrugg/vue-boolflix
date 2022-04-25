@@ -1,6 +1,6 @@
 <template>
     <section class="container d-flex flex-column mt-5">
-        <div class="row">
+        <div class="row" v-if="films.length">
            <h2 class="mt-5">Movies</h2>
         </div>   
         
@@ -8,6 +8,7 @@
            <CardItem class="col-3 gy-3"
             v-for="film in films" :key="film.id"
             :item="film"
+            :id="film.id"
             
            />
         </div>   
