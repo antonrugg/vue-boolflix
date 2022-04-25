@@ -1,9 +1,11 @@
 <template>
   <div class="card ar-card" @mouseover="isHover = true" @mouseleave="isHover = false">
-
+      <Transition name="fade">
       <img v-if="item.poster_path" v-show="!isHover" :src="`https://image.tmdb.org/t/p/w342${item.poster_path}`" :alt="item.title || item.name">
       <p class="not-found" v-else-if="!isHover && !item.poster_path">IMG NOT FOUND</p>
+      </Transition>
     <!-- text inside card showing on hover -->
+    <Transition name="fade" mode="out-in">
       <div class="text-info-container pt-5" v-show="isHover">
         <p><span>Titolo: </span>{{item.title || item.name}}</p>
         <p><span>Titolo Originale: </span>{{item.original_title || item.original_name}}</p>
@@ -34,6 +36,8 @@
         </ul>
        
       </div>
+      </Transition>
+      
 
   </div>
 </template>
@@ -98,12 +102,14 @@ export default {
     .ar-card{
         background-color: black;
         min-height: 200px;
+        max-height: 400px;
         cursor: pointer;
         border: 1px solid white;
            
 
         .text-info-container{
             height: 100%;
+            position: absolute;
              
 
             i{
@@ -135,4 +141,14 @@ export default {
         }
 
     }
+
+    .fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>
