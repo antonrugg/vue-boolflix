@@ -40,10 +40,10 @@
         <p>
           <span>
             Voto:
-            <i v-for="(star, i) in starCount" :key="i" class="fas fa-star"></i>
+            <i v-for="(star, i) in starCount" :key="'A' + i" class="fas fa-star"></i>
             <i
               v-for="(star, i) in 5 - starCount"
-              :key="'A' + i"
+              :key="'B' + i"
               class="fa-regular fa-star"
             ></i>
           </span>
@@ -73,12 +73,18 @@ export default {
   data() {
     return {
       isHover: false,
-      starCount: Math.round(this.item.vote_average / 2),
+      
       apiUrl: "https://api.themoviedb.org/3/",
       apiKey: apiKey,
       credits: {},
       cast: [],
     };
+  },
+  computed: {
+    starCount(){
+      const starCount = Math.ceil(this.item.vote_average / 2);
+      return starCount;
+    }
   },
   methods: {
     // getCast(){
